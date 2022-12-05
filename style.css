@@ -22,4 +22,81 @@
     margin: 0px;
     padding: 0px;
     font-family: 'Poppins', sans-serif;
+    color: #fff;
+}
+
+body{
+    background-color: var(--red);
+    background-image: url(images/bg-intro-desktop.png);
+    display: grid;
+    height: 100vh;
+    place-content: center;
+}
+
+main{
+    display: grid;
+    width: clamp(55rem, 85vw, 70rem);;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2.5rem;
+}
+
+h1{
+    font-size: 3rem;
+    line-height: 3rem;
+    margin-bottom: 2rem;
+}
+
+.left{
+    display: grid;
+    align-content: center;
+}
+
+.right span{
+    display: block;
+    background-color: var(--blue);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0.75rem;
+    text-align: center;
+}
+
+.right form{
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 0.75rem;
+}
+
+.right form input{
+    border-radius: 0.25rem;
+    border: 1px solid var(--grayish-blue);
+    margin-bottom: 1rem;
+    padding: 1rem;
+    width: 100%;
+}
+
+.right form input[type="submit"]{
+    background-color: var(--green);
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+    border: 0px;
+    text-transform: uppercase;
+}
+
+.right small{
+    display: block;
+    color: var(--grayish-blue);
+    font-size: 12px;
+    text-align: center;
+}
+
+.right small strong{
+    color: var(--red);
+}
+
+@media (max-width:50rem){
+    main{
+       
+        width: 80vw;
+        grid-template-columns: 1fr;
+    }   
 }
