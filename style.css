@@ -6,6 +6,7 @@
 
     --red: hsl(0, 100%, 74%); 
     --green: hsl(154, 59%, 51%);
+    --green-shadow: 154 56% 45%;
 
 /* ### Accent */
 
@@ -55,9 +56,10 @@ h1{
     display: block;
     background-color: var(--blue);
     padding: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
     border-radius: 0.75rem;
     text-align: center;
+    box-shadow: 0 8px 0 rgba(0,0,0,0.15);
 }
 
 .right form{
@@ -72,31 +74,56 @@ h1{
     margin-bottom: 1rem;
     padding: 1rem;
     width: 100%;
+    color: var(--dark-blue);
+}
+
+.right form input:focus{
+    outline: 1px solid var(--dark-blue);
 }
 
 .right form input[type="submit"]{
     background-color: var(--green);
+    padding: 1.1rem 0.5rem 0.7rem;
     margin-top: 1rem;
     border-radius: 0.5rem;
     border: 0px;
     text-transform: uppercase;
+    color: #fff;
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    box-shadow: 0 4px 1px hsl(var(--green-shadow));
+    cursor: pointer;
+}
+
+.right form input::placeholder{
+    color: var(--dark-blue);
+    font-weight: 700;
 }
 
 .right small{
     display: block;
     color: var(--grayish-blue);
-    font-size: 12px;
+    font-size: 11px;
     text-align: center;
 }
 
 .right small strong{
     color: var(--red);
+    cursor: pointer;
 }
 
-@media (max-width:50rem){
+@media (max-width:55rem){
     main{
-       
-        width: 80vw;
+        width: 85vw;
         grid-template-columns: 1fr;
-    }   
+    }  
+    
+    h1{
+        font-size: 2rem;
+        line-height: 2.5rem;
+    }
+
+    p, h1{
+        text-align: center;
+    }
 }
