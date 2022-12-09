@@ -5,13 +5,19 @@ let returnedInputs = [];
 
 // const form = document.getElementById('form');
 
+function runError(){
+    inputs.forEach(input => input.id !== '' ? input.value = '' : '');
+    returnedInputs = [];
+}
+
 function checkInputs(e){
     e.preventDefault();
     // get inputs that have ID
-    inputs.forEach(input => input.id !== '' ? returnedInputs.push(input.value) : console.log('nothing'));
+    inputs.forEach(input => input.id ? returnedInputs.push(input.value) : '');
+    const [firstName, lastName, email, password] = returnedInputs;
+    //console.log(firstName, lastName, email, password);
 
-    // if returned inputs has any empty strings fire error function  
-    console.log(returnedInputs);
+    returnedInputs.some(arr => arr === '') ? runError() : console.log('no issues');
 }
 
 form.addEventListener('submit', (e) => checkInputs(e));
