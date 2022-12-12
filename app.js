@@ -2,9 +2,12 @@ const form = document.getElementById('form');
 const inputs = document.querySelectorAll('form input');
 const email = document.getElementById('email');
 let returnedInputs = [];
+const complete = document.querySelector('.form-complete');
 
 function runError(){
-    inputs.forEach(input => input.id !== '' ? input.value = '' : '');
+    console.log('error was found');
+      inputs.forEach(input => input.id !== '' && input.value === '' ? input.parentElement.classList.add('active') : input.parentElement.classList.remove('active'));
+  
     returnedInputs = [];
 }
 
@@ -13,9 +16,20 @@ function checkInputs(e){
     // get inputs that have ID
     inputs.forEach(input => input.id ? returnedInputs.push(input.value) : '');
     const [firstName, lastName, email, password] = returnedInputs;
-    //console.log(firstName, lastName, email, password);
 
-    returnedInputs.some(arr => arr === '') ? runError() : console.log('no issues');
+    if(firstName && lastName && email && password !== ''){
+       inputs.forEach(input => input.parentElement.classList.remove('active'));
+       complete.classList.add('active');
+
+        setTimeout(() => {
+            complete.classList.remove('active');
+            location.reload(); 
+        }, 3000);
+
+    } else{
+        console.log('problem found');
+        runError();
+    }
 }
 
 form.addEventListener('submit', (e) => checkInputs(e));
