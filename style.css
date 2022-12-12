@@ -117,7 +117,7 @@ em{
     cursor: pointer;
 }
 
-.right form input::placeholder{
+.right form input:placeholder{
     color: var(--dark-blue);
     font-weight: 700;
 }
