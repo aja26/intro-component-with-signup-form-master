@@ -3,8 +3,6 @@ const inputs = document.querySelectorAll('form input');
 const email = document.getElementById('email');
 let returnedInputs = [];
 
-// const form = document.getElementById('form');
-
 function runError(){
     inputs.forEach(input => input.id !== '' ? input.value = '' : '');
     returnedInputs = [];
