@@ -118,7 +118,7 @@ em{
 }
 
 .right form input::placeholder{
-    color: var(--dark-blue);
+    color: red;
     font-weight: 700;
 }
 
