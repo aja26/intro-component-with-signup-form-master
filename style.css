@@ -100,7 +100,7 @@ em{
 }
 
 .right form input:focus{
-    outline: 1px solid var(--dark-blue);
+    outline: 1px solid var(--greyish-blue);
 }
 
 .right form input[type="submit"]{
@@ -118,7 +118,7 @@ em{
 }
 
 .right form input::placeholder{
-    color: red;
+    color: var(--dark-blue);
     font-weight: 700;
 }
 
